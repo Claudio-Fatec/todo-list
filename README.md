@@ -26,3 +26,20 @@ Aplicação Spring Boot para gestão de tarefas, desenvolvida como projeto acad�
 1. Clona o repositório:
    ```bash
    git clone [https://github.com/Claudio-Fatec/todo-list.git](https://github.com/Claudio-Fatec/todo-list.git)
+
+   ## 🗄️️ Banco de Dados
+
+O projeto utiliza o **PostgreSQL** como banco de dados. O script de criação das tabelas está disponível no projeto em `src/main/resources/schema.sql`.
+
+### Script SQL (`schema.sql`)
+
+```sql
+CREATE TABLE IF NOT EXISTS tb_tarefa (
+    id BIGSERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    status VARCHAR(20) NOT NULL,
+    observacoes TEXT,
+    data_criacao TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    data_atualizacao TIMESTAMP WITHOUT TIME ZONE NOT NULL
+);
